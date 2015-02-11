@@ -46,9 +46,8 @@ gem "omniauth-facebook"
 
 group :development, :test do
   gem 'pry'
-  gem 'pry-debugger'
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'pry-byebug'
+  gem 'pry-rails'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
