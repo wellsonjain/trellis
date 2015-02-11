@@ -31,22 +31,29 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem "devise"
+gem 'devise'
 
 # load application yml to ENV constant
-gem "figaro"
+gem 'figaro'
 
 # for oauth login
-gem "omniauth-oauth2"
-gem "omniauth-google-oauth2"
-gem "omniauth-github"
-gem "omniauth-facebook"
+gem 'omniauth-oauth2'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-github'
+gem 'omniauth-facebook'
 
 # Use andy rails toolbox
 gem 'andy_rails_toolbox'
 
 # Use Bootstrap Form
 gem 'bootstrap_form', github: 'bootstrap-ruby/rails-bootstrap-forms'
+
+# Display full error content
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+end
 
 group :development, :test do
   gem 'pry'
