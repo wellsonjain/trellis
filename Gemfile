@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.2.0'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
@@ -44,10 +42,17 @@ gem "omniauth-google-oauth2"
 gem "omniauth-github"
 gem "omniauth-facebook"
 
+# Use andy rails toolbox
+gem 'andy_rails_toolbox'
+
+# Use Bootstrap Form
+gem 'bootstrap_form', github: 'bootstrap-ruby/rails-bootstrap-forms'
+
 group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'pry-remote'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

@@ -12,7 +12,7 @@ oauth 授權的使用者，資料庫不記錄 password
 #### config
 `/config/application.yml`
 
-```
+``` yml
 GITHUB_KEY: "your Client ID here"
 GITHUB_SECRET: "your Client Secret here"
 ```
@@ -30,7 +30,7 @@ GITHUB_SECRET: "your Client Secret here"
 #### config
 `/config/application.yml`
 
-```
+``` yml
 GOOGLE_CLIENT_ID: "your Client ID here"
 GOOGLE_CLIENT_SECRET: "your Client Secret here"
 ```
@@ -47,7 +47,7 @@ GOOGLE_CLIENT_SECRET: "your Client Secret here"
 #### config
 `/config/application.yml`
 
-```
+``` yml
 FACEBOOK_KEY: "your Client ID here"
 FACEBOOK_SECRET: "your Client Secret here"
 ```

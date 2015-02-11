@@ -1,34 +1,27 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<div class="container">
+  <div class="page-header">
+    <h3>Sign Up</h3>
   </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+  <% unless alert.nil? %>
+    <div class="alert alert-danger" role="alert">
+      <%= alert %>
+    </div>
+  <% end %>
 
-  <div class="field">
-    <%= f.label :password %>
+  <%= bootstrap_form_for resource, as: resource_name, url: registration_path(resource_name), layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-4' do |f| %>
+    <%= f.email_field :email, placeholder: 'E-mail', prepend: fa_icon('envelope-o fw'), autofocus: true %>
+    <%= f.text_field :name, placeholder: 'Name', prepend: fa_icon('user fw') %>
     <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+      <%= f.password_field :password, placeholder: 'Password', prepend: fa_icon('key fw'), autocomplete: 'off', help: "(#{@minimum_password_length} characters minimum)" %>
+    <% else %>
+      <%= f.password_field :password, placeholder: 'Password', prepend: fa_icon('key fw'), autocomplete: 'off' %>
+    <% end %>
+    <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation', prepend: fa_icon('key fw'), autocomplete: 'off' %>
+    <%= f.form_group do %>
+      <%= f.primary 'Sign Up' %>
+      <%= link_button 'Cancel', url: root_path %>
+      <%= render 'devise/shared/links' %>
+    <% end %>
+  <% end %>
+</div>
