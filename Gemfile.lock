@@ -133,8 +133,13 @@ GEM
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
+    omniauth-facebook (1.6.0)
+      omniauth-oauth2 (~> 1.1)
     omniauth-github (1.1.2)
       omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-google-oauth2 (0.2.6)
+      omniauth (> 1.0)
       omniauth-oauth2 (~> 1.1)
     omniauth-oauth2 (1.1.2)
       faraday (>= 0.8, < 0.10)
@@ -235,8 +240,10 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  omniauth-facebook
   omniauth-github
-  omniauth-oauth2 (= 1.1.2)
+  omniauth-google-oauth2
+  omniauth-oauth2
   pry
   pry-debugger
   rails (= 4.2.0)

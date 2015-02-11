@@ -38,9 +38,10 @@ gem "devise"
 gem "figaro"
 
 # for oauth login
-gem "omniauth-oauth2", '1.1.2'
-# gem "omniauth-google-oauth2"
+gem "omniauth-oauth2"
+gem "omniauth-google-oauth2"
 gem "omniauth-github"
+gem "omniauth-facebook"
 
 group :development, :test do
   gem 'pry'
