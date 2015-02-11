@@ -1,0 +1,19 @@
+development:
+  GITHUB_KEY: ""
+  GITHUB_SECRET: ""
+
+  GOOGLE_CLIENT_ID: ""
+  GOOGLE_CLIENT_SECRET: ""
+
+  FACEBOOK_KEY: ""
+  FACEBOOK_SECRET: ""
+
+production:
+  GITHUB_KEY: ""
+  GITHUB_SECRET: ""
+
+  GOOGLE_CLIENT_ID: ""
+  GOOGLE_CLIENT_SECRET: ""
+
+  FACEBOOK_KEY: ""
+  FACEBOOK_SECRET: ""

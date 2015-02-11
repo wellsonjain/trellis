@@ -1,0 +1,40 @@
+<ul class="nav navbar-nav navbar-right">
+  <li class="dropdown">
+    <% unless user_signed_in? %>
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+        <%= fa_icon 'user fw' %> Devise <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <%= link_to fa_icon('plus fw') + ' Sign Up', new_registration_path(:user) %>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <%= link_to fa_icon('sign-in fw') + ' Sign In with Email', new_session_path(:user) %>
+        </li>
+        <li>
+          <%= link_to fa_icon('google fw') + ' Sign In with Google', omniauth_authorize_path(:user, :google_oauth2) %>
+        </li>
+        <li>
+          <%= link_to fa_icon('github fw') + ' Sign In with GitHub', omniauth_authorize_path(:user, :github) %>
+        </li>
+        <li>
+          <%= link_to fa_icon('facebook-square fw') + ' Sign In with Facebook', omniauth_authorize_path(:user, :facebook) %>
+        </li>
+      </ul>
+    <% else %>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <%= fa_icon 'user fw' %> <%= current_user.username %> <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <%= link_to fa_icon('sign-out fw') + 'Sign out', destroy_session_path(:user), method: :delete %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    <% end  %>
+  </li>
+</ul>

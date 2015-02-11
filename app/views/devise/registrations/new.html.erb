@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="page-header">
+    <h3>Sign Up</h3>
+  </div>
+
+  <% unless alert.nil? %>
+    <div class="alert alert-danger" role="alert">
+      <%= alert %>
+    </div>
+  <% end %>
+
+  <%= bootstrap_form_for resource, as: resource_name, url: registration_path(resource_name), layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-4' do |f| %>
+    <%= f.email_field :email, placeholder: 'E-mail', prepend: fa_icon('envelope-o fw'), autofocus: true %>
+    <%= f.text_field :name, placeholder: 'Name', prepend: fa_icon('user fw') %>
+    <% if @validatable %>
+      <%= f.password_field :password, placeholder: 'Password', prepend: fa_icon('key fw'), autocomplete: 'off', help: "(#{@minimum_password_length} characters minimum)" %>
+    <% else %>
+      <%= f.password_field :password, placeholder: 'Password', prepend: fa_icon('key fw'), autocomplete: 'off' %>
+    <% end %>
+    <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation', prepend: fa_icon('key fw'), autocomplete: 'off' %>
+    <%= f.form_group do %>
+      <%= f.primary 'Sign Up' %>
+      <%= link_button 'Cancel', url: root_path %>
+      <%= render 'devise/shared/links' %>
+    <% end %>
+  <% end %>
+</div>

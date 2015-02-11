@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,9 +33,41 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'devise'
+
+# load application yml to ENV constant
+gem 'figaro'
+
+# for oauth login
+gem 'omniauth-oauth2'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-github'
+gem 'omniauth-facebook'
+
+# Use andy rails toolbox
+gem 'andy_rails_toolbox'
+
+# Use Bootstrap Form
+gem 'bootstrap_form', github: 'bootstrap-ruby/rails-bootstrap-forms'
+
+# Display full error content
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+end
+
+# For heroku
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'pry-remote'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -45,4 +78,3 @@ group :development, :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
 end
-
