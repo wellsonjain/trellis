@@ -56,4 +56,8 @@ class User < ActiveRecord::Base
   def password_required?
     super && provider.blank?
   end
+
+  def username
+    !self.name.empty? ? self.name : self.email.split(/@/).first
+  end
 end
