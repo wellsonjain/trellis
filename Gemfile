@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use PostgreSQL as the database for Active Record
@@ -32,21 +31,40 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem "devise"
+gem 'devise'
 
 # load application yml to ENV constant
-gem "figaro"
+gem 'figaro'
 
 # for oauth login
-gem "omniauth-oauth2"
-gem "omniauth-google-oauth2"
-gem "omniauth-github"
-gem "omniauth-facebook"
+gem 'omniauth-oauth2'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-github'
+gem 'omniauth-facebook'
+
+# Use andy rails toolbox
+gem 'andy_rails_toolbox'
+
+# Use Bootstrap Form
+gem 'bootstrap_form', github: 'bootstrap-ruby/rails-bootstrap-forms'
+
+# Display full error content
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+end
+
+# For heroku
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'pry-remote'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
